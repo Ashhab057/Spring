@@ -6,10 +6,24 @@
 
     <!-- bean definitions here -->
 
+    <bean id="contact"
+          name="contact"
+          class="com.jspider.springs.demo.ContactInfo" />
+
+    <bean id="address"
+          name="address"
+          class="com.jspider.springs.demo.Address" />
+
+    <bean id="employee"
+          name="employee"
+          class="com.jspider.springs.demo.Employee">
 
 
-    <bean id="Sample"
-          name="Sample"
-          class="com.jspiders.springs.demo.Sample" />
+        <constructor-arg ref="contact"/>
+
+
+            </bean>
+
+
 
 </beans>

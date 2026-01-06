@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="contact"
+          name="contact"
+          class="com.jspider.springs.demo.ContactInfo" />
+
+    <bean id="address"
+          name="address"
+          class="com.jspider.springs.demo.Address" />
+
+    <bean id="employee"
+          name="employee"
+          class="com.jspider.springs.demo.Employee">
+
+
+        <constructor-arg ref="contact"/>
+
+
+            </bean>
+
+
+
+</beans>

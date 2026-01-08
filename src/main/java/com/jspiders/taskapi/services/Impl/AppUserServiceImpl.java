@@ -2,6 +2,7 @@ package com.jspiders.taskapi.services.Impl;
 
 import com.jspiders.taskapi.data.users.AppUser;
 import com.jspiders.taskapi.data.users.CreateUserRequest;
+import com.jspiders.taskapi.error.InvalidNameException;
 import com.jspiders.taskapi.services.AppUserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -59,5 +60,13 @@ public class AppUserServiceImpl implements AppUserService {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(null);
+    }
+
+    private void validateName(CreateUserRequest createUserRequest){
+        if(createUserRequest.getName() != null && createUserRequest.getName().length()>1){
+
+            InvalidNameException ex  = new InvalidNameException("Invalid name");
+            throw ex;
+        }
     }
 }
